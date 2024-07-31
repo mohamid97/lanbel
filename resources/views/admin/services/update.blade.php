@@ -207,7 +207,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="custom-control custom-checkbox">
-                                            <input {{($category->star ?'checked':'')}} name="star" type="checkbox" class="custom-control-input" id="customCheck2">
+                                            <input {{($service->star ?'checked':'')}} name="star" type="checkbox" class="custom-control-input" id="customCheck2">
                                             <label class="custom-control-label" for="customCheck2"></label>
                                         </div>
                                     </div>

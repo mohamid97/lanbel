@@ -359,6 +359,46 @@
 
 
 
+
+
+
+           
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="fa fa-briefcase nav-icon"></i>
+                            <p>
+                                 Test Package
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{route('admin.tests.index')}}" class="nav-link">
+                                    <i class="fa fa-briefcase nav-icon"></i>
+                                    <p> Test Package </p>
+                                </a>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <a href="{{route('admin.tests.add')}}" class="nav-link">
+                                    <i class="fa fa-plus  nav-icon"></i>
+                                    <p>  Add </p>
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+ 
+
+
+
+
+
+
                     @if($settings->events )
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">

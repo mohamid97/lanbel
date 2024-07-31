@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\MissionVission;
 use App\Http\Controllers\Admin\MediaGroupcontroller;
 use App\Http\Controllers\Admin\OurteamController;
 use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\TestPackageController;
 use App\Models\Admin\Payment;
 use Illuminate\Routing\RouteRegistrar;
 
@@ -125,6 +126,20 @@ Route::middleware('checkIfAdmin')->prefix('admin')->group(function (){
         Route::get('/restore/{id}' , [OurteamController::class , 'restore'])->name('admin.ourteam.restore');
         Route::get('/destroy/{id}' , [OurteamController::class , 'destroy'])->name('admin.ourteam.destroy');
     });
+
+
+
+        // start our tests 
+        Route::prefix('tests')->group(function(){
+            Route::get('/get' , [TestPackageController::class , 'get'])->name('admin.tests.index');
+            Route::get('/edit/{id}' , [TestPackageController::class , 'edit'])->name('admin.tests.edit');
+            Route::post('/update/{id}' , [TestPackageController::class , 'update'])->name('admin.tests.update');
+            Route::get('/create' , [TestPackageController::class , 'create'])->name('admin.tests.add');
+            Route::post('/store' , [TestPackageController::class , 'store'])->name('admin.tests.store');
+            Route::get('/soft_delete/{id}' , [TestPackageController::class , 'soft_delete'])->name('admin.tests.soft_delete');
+            Route::get('/restore/{id}' , [TestPackageController::class , 'restore'])->name('admin.tests.restore');
+            Route::get('/destroy/{id}' , [TestPackageController::class , 'destroy'])->name('admin.tests.destroy');
+        });
 
 
     Route::prefix('events')->group(function(){
