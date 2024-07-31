@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\MediaController;
 use App\Http\Controllers\Api\MissionVisionController;
 use App\Http\Controllers\Api\OurteamController;
 use App\Http\Controllers\Api\StatisticsController;
+use App\Http\Controllers\Api\TestPackageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -67,7 +68,10 @@ Route::middleware('checkLang')->group(function (){
     Route::prefix('our-teams')->group(function(){
          Route::get('/get' ,[OurteamController::class , 'get'] );
     });
-
+    // start our team api 
+    Route::prefix('test_packages')->group(function(){
+        Route::get('/get' ,[TestPackageController::class , 'get'] );
+   });
     Route::prefix('social-media')->group(function (){
        Route::get('/get' , [\App\Http\Controllers\Api\SocialController::class , 'get']);
     });
