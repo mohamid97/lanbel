@@ -56,8 +56,8 @@
                                 <td>
                                     <img src="{{asset('uploads/images/feedbacks/'. $feed->image)}}" width="150px" height="150px">
                                 </td>
-                                <td>{{$feed->translate(app()->getLocale())->name}}</td>
-                                <td>{{$feed->translate(app()->getLocale())->small_des}}</td>
+                                <td>{{$feed->name}}</td>
+                                <td>{{$feed->small_des}}</td>
                                 <td>
                                     <a href="{{route('admin.feedback.edit' ,  ['id' => $feed->id])}}">
                                         <button class="btn btn-sm btn-info"> <i class="nav-icon fas fa-edit"></i> Edit</button>

@@ -162,6 +162,28 @@
 
 
                             <br>
+
+
+                            <div class="form-group">
+                                <label for="pdf">PDF</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input name="pdf" type="file" class="custom-file-input" id="pdf">
+                                        <label class="custom-file-label" for="pdf">Choose Image</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="">Upload</span>
+                                    </div>
+                                </div>
+    
+                                @error('pdf')
+                                <div class="text-danger">{{ $errors->first('pdf') }}</div>
+                                @enderror
+                            </div>
+                            <br>
+
+
+                            
                             <div class="border  p-3">
     
                                 @foreach($langs as $lang)

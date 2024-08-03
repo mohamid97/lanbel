@@ -34,10 +34,7 @@ use App\Http\Controllers\Admin\TestPackageController;
 use App\Models\Admin\Payment;
 use Illuminate\Routing\RouteRegistrar;
 
-Route::get('/mig' , function (){
-    \Artisan::call("migrate --path='database/migrations/2024_04_08_073608_add_messages_to_table_name.php'");
 
-});
 
 Route::get('/login', [AuthController::class , 'show_login'])->name('showLogin');
 Route::post('/login', [AuthController::class,'login'])->name('login');

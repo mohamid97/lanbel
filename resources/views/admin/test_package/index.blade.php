@@ -55,7 +55,7 @@
                                 <td>
                                     <img src="{{asset('uploads/images/tests/'. $test->image)}}" width="150px" height="150px">
                                 </td>
-                                <td>{{ $test->translate(app()->getLocale())->title }}</td>
+                                <td>{{ $test->title }}</td>
                                 <td>
                                     <a href="{{route('admin.tests.edit' ,  ['id' => $test->id])}}">
                                         <button class="btn btn-sm btn-info"> <i class="nav-icon fas fa-edit"></i> Edit</button>

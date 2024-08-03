@@ -31,6 +31,7 @@ class UpdateServiceRequest extends FormRequest
             'meta_des.*'=>'nullable|string',
             'category'=>'nullable',
             'photo.*'=>'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'pdf'=>'nullable|file',
             'price'=>'nullable'
         ];
     }

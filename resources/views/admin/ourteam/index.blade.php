@@ -56,8 +56,8 @@
                                 <td>
                                     <img src="{{asset('uploads/images/teams/'. $team->image)}}" width="150px" height="150px">
                                 </td>
-                                <td>{{ $team->translate(app()->getLocale())->name }}</td>
-                                <td>{{ $team->translate(app()->getLocale())->title }}</td>
+                                <td>{{ $team->name }}</td>
+                                <td>{{ $team->title }}</td>
                                 <td>
                                     <a href="{{route('admin.ourteam.edit' ,  ['id' => $team->id])}}">
                                         <button class="btn btn-sm btn-info"> <i class="nav-icon fas fa-edit"></i> Edit</button>

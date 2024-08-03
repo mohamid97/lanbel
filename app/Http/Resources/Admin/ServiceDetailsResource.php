@@ -28,6 +28,7 @@ class ServiceDetailsResource extends JsonResource
             'meta_des'  =>$this->meta_des,
             'slug'      =>$this->slug,
             'image'     => $this->image,
+            'pdf'         =>asset('uploads/images/service/' . $this->pdf),
             'alt_image'=>$this->alt_image,
             'title_image'=>$this->title_image,
             'small_des'=>$this->small_des,

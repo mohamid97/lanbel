@@ -30,7 +30,8 @@ class StoreServiceRequest extends FormRequest
             'des.*'=>'nullable|string',
             'meta_title.*'=>'nullable|string',
             'meta_des.*'=>'nullable|string',
-            'photo.*'=>'nullable|image|mimes:jpeg,png,jpg,gif,webp'
+            'photo.*'=>'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'pdf'=>'nullable|file'
         ];
     }
 }

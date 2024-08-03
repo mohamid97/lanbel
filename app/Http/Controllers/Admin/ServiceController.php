@@ -52,12 +52,19 @@ class ServiceController extends Controller
                   $image_name = time() .'.'.$request->image->getClientOriginalName();
                   $request->image->move(public_path('uploads/images/service'), $image_name);         
             }
+
+            $pfd = null;
+            if ($request->hasFile('pdf')) {
+                  $pdf = time() .'.'.$request->pdf->getClientOriginalName();
+                  $request->pdf->move(public_path('uploads/images/service'), $pdf);         
+            }
             // insert service
              $service = new Service();
              $service->price = $request->price;
              $service->category_id = ($request->category != '0' ) ? $request->category : null;
              $service->star = $request->star;
              $service->image = $image_name;
+             $service->pdf = $pdf;
              $service->save();
             foreach ($this->langs as $lang) {
                 $service->{'name:'.$lang->code}  = $request->name[$lang->code];
@@ -136,6 +143,12 @@ class ServiceController extends Controller
                 $image_name = time() .'.'.$request->image->getClientOriginalName();
                 $request->image->move(public_path('uploads/images/service'), $image_name);  
             }
+
+            $pdf = null;
+            if ($request->hasFile('pdf')){
+                $pdf = time() .'.'.$request->pdf->getClientOriginalName();
+                $request->pdf->move(public_path('uploads/images/service'), $pdf);  
+            }
     
             $service->star = $request->star;
             $service->category_id = ($request->category != 'null' ) ? $request->category : null;
@@ -143,6 +156,9 @@ class ServiceController extends Controller
             if(isset($image_name) && $image_name != null){
                  $service->image = $image_name;
             }
+            if(isset($pdf) && $pdf != null){
+                $service->pdf = $pdf;
+           }
 
 
             // insert translation of services

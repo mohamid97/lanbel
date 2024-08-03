@@ -81,13 +81,15 @@
                             @if($des->image && $des->image != null)
                             <img src="{{asset('uploads/images/des/'. $des->image)}}" width="150px" height="150px">
 
-                        @endif
+                            @endif
 
                             @error('image')
                             <div class="text-danger">{{ $errors->first('image') }}</div>
                             @enderror
                         </div>
                          <br>
+
+
 
                         <div class="border  p-3">
 

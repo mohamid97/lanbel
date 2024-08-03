@@ -12,7 +12,7 @@ class Service extends Model implements TranslatableContract
 {
     use HasFactory , SoftDeletes , Translatable;
     public $translatedAttributes = ['name', 'des' , 'meta_title' , 'meta_des' , 'slug' , 'alt_image' , 'title_image'];
-    protected $fillable = ['price' , 'star' , 'image'];
+    protected $fillable = ['price' , 'star' ,'pdf', 'image'];
     public $translationForeignKey = 'service_id';
     public $translationModel = 'App\Models\Admin\ServiceTranslation';
 

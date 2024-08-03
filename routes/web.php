@@ -3,6 +3,7 @@
 use App\Http\Controllers\Front\FrontendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\HomeController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,10 @@ Route::get('/', function(){
  return redirect()->route('admin.index');
 });
 
-
+Route::get('/mig', function () {
+    Artisan::call('migrate:refresh');
+    Artisan::call('db:seed');
+});
 // Route::get('/', [HomeController::class , 'index'])->name('home');
 
 // Route::get('/about' , [FrontendController::class , 'about'])->name('about');

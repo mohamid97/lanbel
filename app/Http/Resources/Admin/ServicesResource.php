@@ -27,6 +27,7 @@ class ServicesResource extends JsonResource
             'meta_title'  =>$this->meta_title,
             'meta_des'    =>$this->meta_des,
             'image'       =>$this->image,
+            'pdf'         =>asset('uploads/images/service/' . $this->pdf),
             'alt_image'   =>$this->alt_image,
             'title_image' =>$this->title_image,
             'small_des'   =>$this->small_des,
