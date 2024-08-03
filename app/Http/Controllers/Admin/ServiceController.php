@@ -53,7 +53,7 @@ class ServiceController extends Controller
                   $request->image->move(public_path('uploads/images/service'), $image_name);         
             }
 
-            $pfd = null;
+            $pdf = null;
             if ($request->hasFile('pdf')) {
                   $pdf = time() .'.'.$request->pdf->getClientOriginalName();
                   $request->pdf->move(public_path('uploads/images/service'), $pdf);         
