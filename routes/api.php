@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\FeedbackController;
 use App\Http\Controllers\Api\MediaController;
 use App\Http\Controllers\Api\MissionVisionController;
+use App\Http\Controllers\Api\OnlineAppointmentController;
 use App\Http\Controllers\Api\OurteamController;
 use App\Http\Controllers\Api\StatisticsController;
 use App\Http\Controllers\Api\TestPackageController;
@@ -36,7 +37,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('checkLang')->group(function (){
 
 
-    
+    // start Appointment
+
+    Route::prefix('appointments')->group(function(){
+        Route::prefix('online')->group(function(){
+            Route::get('interval', [OnlineAppointmentController::class , 'availableSlots']);
+            Route::post('store', [OnlineAppointmentController::class , 'store']);
+
+        });
+
+    });
 
     Route::prefix('sliders')->group(function (){
         Route::get('/get' , [\App\Http\Controllers\Api\SliderController::class , 'get']);
