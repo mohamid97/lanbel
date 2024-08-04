@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\DescriptionController;
 use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\FeedbackController;
+use App\Http\Controllers\Api\HomeAppointmentController;
 use App\Http\Controllers\Api\MediaController;
 use App\Http\Controllers\Api\MissionVisionController;
 use App\Http\Controllers\Api\OnlineAppointmentController;
@@ -43,6 +44,12 @@ Route::middleware('checkLang')->group(function (){
         Route::prefix('online')->group(function(){
             Route::get('interval', [OnlineAppointmentController::class , 'availableSlots']);
             Route::post('store', [OnlineAppointmentController::class , 'store']);
+
+        });
+
+        Route::prefix('home')->group(function(){
+            Route::post('store', [HomeAppointmentController::class , 'store']);
+
 
         });
 

@@ -243,7 +243,30 @@
                     </ul>
                     </li>
                     @endif
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-address-card nav-icon"></i>
+                            <p>
+                                Appointments
+                               <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.appointments.online')}}" class="nav-link">
+                                <i class="far fa-address-card nav-icon"></i>
+                                <p>Online</p>
+                                </a>
+                            </li>
 
+                            <li class="nav-item">
+                                <a href="{{route('admin.appointments.home')}}" class="nav-link">
+                                <i class="far fa-address-card nav-icon"></i>
+                                <p>Home</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
 
 

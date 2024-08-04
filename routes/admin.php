@@ -25,9 +25,11 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FeedBackController;
 use App\Http\Controllers\Admin\FqaController;
+use App\Http\Controllers\Admin\HomeAppointmentController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\MissionVission;
 use App\Http\Controllers\Admin\MediaGroupcontroller;
+use App\Http\Controllers\Admin\OnlineAppointmentController;
 use App\Http\Controllers\Admin\OurteamController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\TestPackageController;
@@ -84,6 +86,16 @@ Route::middleware('checkIfAdmin')->prefix('admin')->group(function (){
 
 
 
+
+    // start appointments online and home
+    Route::prefix('appointments')->group(function(){
+        Route::get('online' , [OnlineAppointmentController::class , 'get'])->name('admin.appointments.online');
+        Route::get('/online/edit/{id}' , [OnlineAppointmentController::class , 'edit'])->name('admin.appointments.edit_online');
+        Route::post('/online/update/{id}' , [OnlineAppointmentController::class , 'update'])->name('admin.appointments.update_online');
+        Route::get('delete/{id}' , [OnlineAppointmentController::class , 'destroy'])->name('admin.appointments.destroy_online');
+        Route::get('home' , [HomeAppointmentController::class , 'get'])->name('admin.appointments.home');
+
+    });
     Route::get('/mission_visison', [MissionVission::class , 'mision_vission'])->name('admin.mission_vission.index');
     Route::post('/mission_visison/store', [MissionVission::class , 'mision_vission_store'])->name('admin.mission_vission.store');
 
