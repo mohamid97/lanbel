@@ -16,7 +16,8 @@ class OnlineAppointmentController extends Controller
         if ($request->has('name') && !empty($request->name)) {
             $name = $request->input('name');
             $query->where('first_name', 'like', "%{$name}%")
-                  ->orWhere('last_name', 'like', "%{$name}%");
+                  ->orWhere('last_name', 'like', "%{$name}%")
+                  ->orWhere('test_type', 'like', "%{$name}%");
         }
 
         // تصفية باستخدام الحالة

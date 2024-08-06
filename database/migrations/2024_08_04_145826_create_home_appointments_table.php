@@ -24,6 +24,8 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female', 'other']);    
             $table->text('des')->nullable();
             $table->enum('status', ['Pending', 'Accepted', 'Finished', 'Declined'])->default('Pending');
+            $table->string('test_type');
+
             $table->timestamps();
         });
     }

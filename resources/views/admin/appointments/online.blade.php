@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <form method="GET" action="{{ route('admin.appointments.online') }}" class="form-inline mb-3">
                     <div class="form-group mr-2">
-                        <input type="text" name="name" class="form-control" placeholder="Search by Name" value="{{ request('name') }}">
+                        <input type="text" name="name" class="form-control" placeholder="Search by Name Or Test Type" value="{{ request('name') }}">
                     </div>
                     <div class="form-group mr-2">
                         <select name="status" class="form-control">

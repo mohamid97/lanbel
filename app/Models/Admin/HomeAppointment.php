@@ -17,6 +17,7 @@ class HomeAppointment extends Model
         'gender',
         'booking_date', // إضافة تاريخ الحجز
         'status',
-        'des'
+        'des',
+        'test_type'
     ];
 }

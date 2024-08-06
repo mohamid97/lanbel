@@ -92,10 +92,15 @@ Route::middleware('checkIfAdmin')->prefix('admin')->group(function (){
         Route::get('online' , [OnlineAppointmentController::class , 'get'])->name('admin.appointments.online');
         Route::get('/online/edit/{id}' , [OnlineAppointmentController::class , 'edit'])->name('admin.appointments.edit_online');
         Route::post('/online/update/{id}' , [OnlineAppointmentController::class , 'update'])->name('admin.appointments.update_online');
-        Route::get('delete/{id}' , [OnlineAppointmentController::class , 'destroy'])->name('admin.appointments.destroy_online');
+        Route::get('delete/online/{id}' , [OnlineAppointmentController::class , 'destroy'])->name('admin.appointments.destroy_online');
         Route::get('home' , [HomeAppointmentController::class , 'get'])->name('admin.appointments.home');
-
+        Route::get('/home/edit/{id}' , [HomeAppointmentController::class , 'edit'])->name('admin.appointments.edit_home');
+        Route::post('/home/update/{id}' , [HomeAppointmentController::class , 'update'])->name('admin.appointments.update_home');
+        Route::get('delete/home/{id}' , [HomeAppointmentController::class , 'destroy'])->name('admin.appointments.destroy_home');
     });
+
+
+
     Route::get('/mission_visison', [MissionVission::class , 'mision_vission'])->name('admin.mission_vission.index');
     Route::post('/mission_visison/store', [MissionVission::class , 'mision_vission_store'])->name('admin.mission_vission.store');
 
