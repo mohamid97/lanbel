@@ -37,7 +37,9 @@ class OnlineAppointmentController extends Controller
         $bookingDate = Carbon::today()->toDateString();
 
         if (!$this->isValidBookingTime($bookingTime)) {
-            return response()->json(['error' => 'Invalid booking time. Please select a time that follows the 10-minute interval.'], 400);
+                          return $this->res(false , 'Invalid booking time. Please select a time that follows the 10-minute interval.' , 400 );
+
+           // return response()->json(['error' => 'Invalid booking time. Please select a time that follows the 10-minute interval.'], 400);
         }
 
         $existingBooking = Onlineappointment::where('booking_date', $bookingDate)
@@ -45,7 +47,9 @@ class OnlineAppointmentController extends Controller
                                        ->first();
 
         if ($existingBooking) {
-            return response()->json(['error' => 'You have already booked an appointment for today.'], 400);
+                          return $this->res(false , 'You have already booked an appointment for today.' , 400 );
+
+            //return response()->json(['error' => 'You have already booked an appointment for today.'], 400);
         }
 
         $existingSlot = Onlineappointment::where('booking_time', $bookingTime)
@@ -53,7 +57,8 @@ class OnlineAppointmentController extends Controller
                                    ->first();
 
         if ($existingSlot) {
-            return response()->json(['error' => 'This time slot is already booked.'], 400);
+              return $this->res(false , 'This time slot is already booked' , 400 );
+            // return response()->json(['error' => 'This time slot is already booked.'], 400);
         }
 
         $appointment = Onlineappointment::create([
